@@ -1,0 +1,13 @@
+<h1>Add Actor to movie</h1>
+
+<h3>Actor information</h3>
+<%= form_with url: "/movies/#{@movie.id}/update", method: :post, local:true, id: 'form' do |form| %>
+<h4><%= form.label :name %> </h4>
+  <p><%= form.text_field :name %></p>
+<h4><%= form.label :age %> </h4>
+  <p><%= form.number_field :age %></p>
+    <h3>Role in movie</h3>
+<h4><%= form.label :role %> </h4>
+<p><%= form.text_field :role %></p>
+  <%= form.submit 'Create' %>
+<% end %>

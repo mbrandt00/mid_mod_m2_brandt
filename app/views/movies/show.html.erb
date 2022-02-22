@@ -1,0 +1,20 @@
+<h1><%= @movie.title %></h1>
+
+<ul>
+    <li>Title: <%= @movie.title %></li>
+    <li>Release Year: <%= @movie.creation_year %></li>
+    <li>genre: <%= @movie.genre %></li>
+</ul>
+<% @movie.actors.by_age.each do |actor| %>
+
+    <ul>
+        <li>Actor: <%=actor.name%> Playing: <%= actor.roles.first.name%></li>
+    </ul>
+    
+<% end %>
+
+<h3>Average age of actors</h3>
+<%= @movie.average_age_of_actors%>
+
+<%= link_to "Add Actor", "/movies/#{@movie.id}/update"%> 
+<%# #should this go to actor controller? %>

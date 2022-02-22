@@ -4,6 +4,11 @@
 <% @studios.each do |studio| %>
     <h3>Name: <%= studio.name %></h3>
     <h4>Name: <%= studio.location %></h4>
+    <% studio.movies.each do |movie| %>
+    <ul>
+    <li><%=movie.title%></li>
+    </ul>
+    <% end %>
 
 <% end %>
 
